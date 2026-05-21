@@ -1,5 +1,5 @@
 import express from 'express';
-import defaultRouter from './routers/default.routes.js';
+import router from './routers/router.js';
 
 //configure Express.js app
 const app = express();
@@ -16,6 +16,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routers
-app.use("/", defaultRouter);
+app.use("/", router);
 
 export default app;

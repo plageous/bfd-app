@@ -1,6 +1,6 @@
 import app from './app.js';
 import dotenv from 'dotenv';
-import router from './routers/default.routes.js';
+import router from './routers/router.js';
 
 //read environment variables
 dotenv.config();
