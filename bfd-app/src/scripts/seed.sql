@@ -79,7 +79,50 @@ INSERT INTO products (productName, productDesc, productType, productPrice, image
 145.99)
 
 
-
+-- Desk Mat Products
+('Luxuper Desk Mat XL',
+'Genuine full-grain leather delivers functionality with anti-slip bases and refined finish. Protect your desk from scratches, spills, and typical wear and tear. Raised padding along the edge for wrist comfort. Size XL, 400x800mm.',
+'Mousepad',
+55.99,
+'images/'),
+('Luxuper Desk Mat L',
+'Genuine full-grain leather delivers functionality with anti-slip bases and refined finish. Protect your desk from scratches, spills, and typical wear and tear. Raised padding along the edge for wrist comfort. Size L, 400x450mm.',
+'Mousepad',
+45.99,
+'images/',
+),
+('Luxuper Desk Mat M',
+'Genuine full-grain leather delivers functionality with anti-slip bases and a refined finish. Protect your desk from scratches, spills, and typical wear and tear. Raised padding along the edge for wrist comfort. Size M, 300x350mm.',
+'Mousepad',
+35.99,
+'images/'
+),
+('Luxuper Desk Mat S',
+'Genuine full-grain leather delivers functionality with anti-slip bases and refined finish. Protect your desk from scratches, spills, and typical wear and tear. Raised padding along the edge for wrist comfort. Size S, 200x250mm.',
+'Mousepad',
+25.99,
+'images/'),
+('Luxuper Desk Bundle XL',
+'Size XL - Includes our top of the notch full-grain desk mat with added wrist support. Bundled with the Luxuper Type-E Keyboard & M-A mouse.',
+'Bundles',
+149.99,
+'images/'),
+('Luxuper Desk Bundle L',
+'Size L - Includes our top of the notch full-grain desk mat with added wrist support. Bundled with the Luxuper Type-E Keyboard & M-A mouse.',
+'Bundles',
+140.99,
+'images/'),
+('Luxuper Desk Bundle M',
+'Size M - Includes our top of the notch full-grain desk mat with added wrist support. Bundled with the Luxuper Type-E Keyboard & M-A mouse.',
+'Bundles',
+130.99,
+'images/'
+),
+('Luxuper Desk Bundle S',
+'Size S - Includes our top of the notch full-grain desk mat with added wrist support. Bundled with the Luxuper Type-E Keyboard & M-A mouse.'
+120.99,
+'images/'
+),
 
 -- Audio Products
 
