@@ -13,7 +13,7 @@ const pool = mysql.createConnection({
 const fetchProducts = async () => {
     const sql = "SELECT * FROM products ORDER BY id";
     const products = await pool.query(sql);
-    console.log(products);
+    if (products === null) { console.log("Failed to retrieve products!"); }
     return products[0];
 }
 
@@ -28,3 +28,5 @@ export const getAllProducts = () => ({
                 imgUrl: el.image_url
             }))
     });
+
+export const getProductById = (findID) => fetchProducts.find(el => el.id === findID);
