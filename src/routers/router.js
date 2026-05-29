@@ -1,4 +1,5 @@
 import { Router } from "express";
+import * as perCtl from '../controllers/per.controller.js'
 
 const router = Router();
 
