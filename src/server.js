@@ -9,7 +9,7 @@ dotenv.config();
 app.use('/', router);
 
 
-const port = process.env.PORT;
+const port = process.env.PORT_;
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 })
