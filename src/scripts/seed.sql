@@ -127,36 +127,43 @@ INSERT INTO products (productName, productDesc, productType, productPrice, image
 -- Audio Products
 ('Luxuper Firebrand',
 'High quality condenser microphone with a cardioid polar pattern, perfect for streaming or podcasting.',
+'Microphone',
 449.99,
 'images/'
 ),
 ('Luxuper Firebrand Super',
 'High quality ribbon microphone, following similar design design details from the Firebrand. Our magnum opus of audio capture.',
+'Microphone',
 499.99,
 'images/'
 ),
 ('Luxuper Durandall',
 'Adjustable headphones featuring active noise cancelling, ultra-fidelity, and carbon-fiber drivers.',
+'Headphones',
 600.00,
 'images/'
 ),
 ('Luxuper Durandall W',
 'Adjustable headphones featuring active noise cancelling, ultra-fidelity, and carbon-fiber drivers. Wireless model.',
+'Headphones',
 650.00,
 'images/'
 ),
 ('Luxuper Durandall Eternal',
-'Upgrade from the Durandall model, adding daul-battery mounted capability for up to 120 hours of use without charging.',
+'Upgrade from the Durandall model, adding dual-battery mounted capability for up to 120 hours of use without charging.',
+'Headphones',
 689.99,
 'images/'
 ),
 ('Luxuper Durandall Eternal W',
-'Upgrade from the Durandall model, adding daul-battery mounted capability for up to 120 hours of use without charging. Wireless model.',
+'Upgrade from the Durandall model, adding dual-battery mounted capability for up to 120 hours of use without charging. Wireless model.',
+'Headphones',
 739.99,
 'images/'
 ),
 ('Luxuper Pugio',
 'Headset microphone compatible with all Luxuper headsets. Can be mounted to either side of the headset.',
+'Microphone',
 79.99,
 'images/'
 ),
