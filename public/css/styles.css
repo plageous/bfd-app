@@ -89,10 +89,12 @@ body {
     background: var(--card);
     border-radius: 14px;
     padding: 2rem;
+    margin-bottom: 1rem;
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.5),
         0 0 0 1px var(--border);
 }
+
 
 .card h2 {
     margin-top: 0;
@@ -149,4 +151,14 @@ code {
     padding: 2.5rem 1rem;
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+/* ===== Filter Bar ===== */
+.filters-card {
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 1px var(--border);
 }
