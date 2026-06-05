@@ -11,36 +11,41 @@ export const status = (req, res) => {
 
 // GET /api/products
 export const getProducts = async (req, res) => {
-    const { category, minPrice, maxPrice, sort } = req.query
+    const { search, category, minPrice, maxPrice, sort } = req.query;
     let result = await getAllProducts();
+
+    if (search) {
+        const searchTerm = search.trim().toLowerCase();
+        result = result.filter(el => el.productName.toLowerCase().includes(searchTerm));
+    }
 
     if (category) {
         const categories = category.split(",").map(el => el.trim().toLowerCase());
         result = result.filter(el => categories.includes(el.productType.toLowerCase()));
     }
 
-    if (maxPrice) result = result.filter(el => Number(el.producePrice) <= maxPrice);
-    if (minPrice) result = result.filter(el => Number(el.producePrice) >= minPrice);
+    if (minPrice) result = result.filter(el => Number(el.producePrice) >= Number(minPrice));
+    if (maxPrice) result = result.filter(el => Number(el.producePrice) <= Number(maxPrice));
 
     if (sort) {
-        let order = 1;
-        if (sort[0] === "-") { order = -1; }
+        const order = sort.startsWith("-") ? -1 : 1;
+        const field = sort.replace(/^-/, "");
+        const sortMap = { price: "producePrice", name: "productName" };
+        const col = sortMap[field];
 
-        result = result.sort((a, b) => {
-            const sortA = a[sort];
-            const sortB = b[sort];
-            if (typeof sortA === "string") { return sortA.localeCompare.sortB; }
-            return (sortA - sortB) * order;
-        });
-
-        if (sort.includes("price")) {
-            result = result.toSorted((a, b) => (a.producePrice - b.producePrice) * order);
-        };
-    };
+        if (col) {
+            result = result.sort((a, b) => {
+                const valA = a[col];
+                const valB = b[col];
+                if (typeof valA === "string") { return valA.localeCompare(valB) * order; }
+                return (valA - valB) * order;
+            });
+        }
+    }
 
     return res.status(200).json({
         count: result.length,
-        filtered: result
+        products: result
     });
 };
 

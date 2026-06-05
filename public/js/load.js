@@ -5,6 +5,9 @@ const sortSelect     = document.getElementById('sort');
 const grid           = document.querySelector('.product-grid');
 const productCount   = document.querySelector('.product-count');
 
+console.log('form:', form);         // add this
+console.log('grid:', document.querySelector('.product-grid')); // add this
+
 // Intercept the form submit — use fetch() instead of a page reload
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -21,7 +24,7 @@ function buildQueryString() {
     const category = categorySelect.value;
     const sort     = sortSelect.value;
 
-    if (name)                        params.set('name', name);
+    if (name) params.set('search', name);
     if (category)                    params.set('category', category);
     if (sort && sort !== 'featured') params.set('sort', sort);
 
