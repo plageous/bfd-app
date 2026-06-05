@@ -42,15 +42,6 @@
                 <select id="category" name="category">
                     <option value="">All</option>
 
-                    <% categories.forEach(category => { %>
-                        <option
-                            value="<%= category %>"
-                            <%= query?.category === category ? 'selected' : '' %>
-                        >
-                            <%= category %>
-                        </option>
-                    <% }) %>
-
                 </select>
             </div>
 
@@ -81,40 +72,6 @@
     </p>
 
     <section class="product-grid">
-
-        <% products.forEach(product => { %>
-
-            <article class="product-card">
-
-                <img
-                    src="/<%= product.image_url %>"
-                    alt="<%= product.productName %>"
-                />
-
-                <h3><%= product.productName %></h3>
-
-                <p class="category">
-                    <%= product.productType %>
-                </p>
-
-                <p class="price">
-                    $<%= product.producePrice %>
-                </p>
-
-                <a
-                    class="button secondary"
-                    href="/api/products/<%= product.id %>"
-                >
-                    View Product
-                </a>
-
-            </article>
-
-        <% }) %>
-
-    </section>
-
-</main>
 
         <% products.forEach(product => { %>
 
