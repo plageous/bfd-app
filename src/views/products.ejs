@@ -1,134 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Luxuper</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="/js/load.js" defer></script>
-    <link rel="stylesheet" href="/css/styles.css" />
+  <meta charset="UTF-8" />
+  <title>Luxuper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="/js/load.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
+
 <body>
 
-    <nav class="nav-bar">
-        <div class="nav-buttons">
-            <a class="button login">Login</a>
-            <a class="button reg">Register</a>
-            <a class="button prod" href="/api/products">Products</a>
-        </div>
-    </nav>
+  <nav class="nav-bar">
+    <div class="nav-buttons">
+      <a class="button login">Login</a>
+      <a class="button reg">Register</a>
+      <a class="button prod" href="/api/products">Products</a>
+    </div>
+  </nav>
 
-<main class="container">
+  <main class="container">
 
     <section class="filters-card">
 
-        <h1>All Products</h1>
-        <p>Browse the Luxuper catalog.</p>
+      <h1>All Products</h1>
+      <p>Browse the Luxuper catalog.</p>
 
-        <form class="filter-form" method="GET" action="/api/products">
+      <form class="filter-form" method="GET" action="/api/products">
+        <section class="filter-form">
+          <div class="filter-group">
+            <label for="search">Search</label>
+            <input type="text" id="search" name="search" placeholder="Search name or description..." value="<%= query?.search || '' %>" />
+          </div>
 
-            <div class="filter-group">
-                <label for="search">Search</label>
-                <input
-                    type="text"
-                    id="search"
-                    name="search"
-                    placeholder="Search name or description..."
-                    value="<%= query?.search || '' %>"
-                />
-            </div>
+          <div class="filter-group">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value="">All</option>
 
-            <div class="filter-group">
-                <label for="category">Category</label>
-                <select id="category" name="category">
-                    <option value="">All</option>
+            </select>
+          </div>
 
-                </select>
-            </div>
+          <div class="filter-group">
+            <label for="sort">Sort</label>
+            <select id="sort" name="sort">
+              <option value="featured">Featured</option>
+              <option value="price_asc">Price Low → High</option>
+              <option value="price_desc">Price High → Low</option>
+              <option value="name_asc">Name A → Z</option>
+            </select>
+          </div>
 
-            <div class="filter-group">
-                <label for="sort">Sort</label>
-                <select id="sort" name="sort">
-                    <option value="featured">Featured</option>
-                    <option value="price_asc">Price Low → High</option>
-                    <option value="price_desc">Price High → Low</option>
-                    <option value="name_asc">Name A → Z</option>
-                </select>
-            </div>
+          <button class="button secondary" type="submit">
+            Filter
+          </button>
 
-            <button class="button secondary" type="submit">
-                Filter
-            </button>
+        <button class="button secondary" type="button" onclick="window.location='/products'">
+        Clear
+        </button>
 
-            <a class="button" href="/api/products">
-                Clear
-            </a>
+      </form>
 
-        </form>
+
 
     </section>
 
     <p class="product-count">
-        Showing <%= products.length %> products
+      Showing <%= products.length %> products
     </p>
+
 
     <section class="product-grid">
 
-        <% products.forEach(product => { %>
+      <% products.forEach(product => { %>
 
-            <header class="hero">
-                <div class="hero-content">
-                    <h1><%= product.productName %></h1>
-                    <p><%= product.productType %></p>
-                </div>
 
-                <div class="hero-image">
-                    <img
-                        src="/<%= product.image_url %>"
-                        alt="<%= product.productName %>"
-                    />
-                </div>
-            </header>
+      <section class="card">
+        <header class="hero">
+          <div class="hero-content">
+            <h1><%= product.productName %></h1>
+            <p><%= product.productType %></p>
+          </div>
 
-            <section class="card">
+          <div class="hero-image">
+            <img src="/<%= product.image_url %>" alt="<%= product.productName %>" />
+          </div>
+        </header>
 
-                <h2>Product Information</h2>
+        <h2>Product Information</h2>
 
-                <p>
-                    <strong>Category:</strong>
-                    <%= product.productType %>
-                </p>
+        <p>
+          <strong>Category:</strong>
+          <%= product.productType %>
+        </p>
 
-                <p>
-                    <strong>Price:</strong>
-                    $<%= product.producePrice %>
-                </p>
+        <p>
+          <strong>Price:</strong>
+          $<%= product.producePrice %>
+        </p>
 
-                <p>
-                    <strong>Description:</strong>
-                </p>
+        <p>
+          <strong>Description:</strong>
+        </p>
 
-                <p>
-                    <%= product.productDesc %>
-                </p>
+        <p>
+          <%= product.productDesc %>
+        </p>
 
-                <br>
+        <br>
 
-                <a
-                    class="button secondary"
-                    href="/api/products/<%= product.id %>"
-                >
-                    View Product
-                </a>
+        <a class="button secondary" href="/products/<%= product.id %>">
+          View Product
+        </a>
 
-            </section>
+      </section>
 
-        <% }); %>
+      <% }); %>
 
-    </main>
+  </main>
 
-    <footer class="footer">
-        <p>BFD Web Development - (2026)</p>
-    </footer>
+  <footer class="footer">
+    <p>BFD Web Development - (2026)</p>
+  </footer>
 
 </body>
+
 </html>
