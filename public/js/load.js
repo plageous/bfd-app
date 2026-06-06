@@ -24,7 +24,7 @@ function buildQueryString() {
     const category = categorySelect.value;
     const sort     = sortSelect.value;
 
-    if (name) params.set('search', name);
+    if (name) params.set('name', name);
     if (category)                    params.set('category', category);
     if (sort && sort !== 'featured') params.set('sort', sort);
 
@@ -34,6 +34,7 @@ function buildQueryString() {
 async function loadProducts() {
     const qs  = buildQueryString();
     const url = `http://localhost:8001/api/products${qs ? '?' + qs : ''}`;
+    console.log(url);
     const config = {
         method: 'get'
     };

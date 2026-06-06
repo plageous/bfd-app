@@ -11,13 +11,9 @@ export const status = (req, res) => {
 
 // GET /api/products
 export const getProducts = async (req, res) => {
-    const { search, category, minPrice, maxPrice, sort } = req.query;
-    let result = await getAllProducts();
+    const { name, category, minPrice, maxPrice, sort } = req.query;
 
-    if (search) {
-        const searchTerm = search.trim().toLowerCase();
-        result = result.filter(el => el.productName.toLowerCase().includes(searchTerm));
-    }
+    let result = await getAllProducts(name); //sends the name query to the SQL call
 
     if (category) {
         const categories = category.split(",").map(el => el.trim().toLowerCase());
