@@ -33,7 +33,7 @@ function buildQueryString() {
 
 async function loadProducts() {
     const qs  = buildQueryString();
-    const url = `http://localhost:8001/api/products${qs ? '?' + qs : ''}`;
+    const url = `/api/products${qs ? '?' + qs : ''}`;
     console.log(url);
     const config = {
         method: 'get'

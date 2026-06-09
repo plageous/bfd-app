@@ -15,7 +15,7 @@
     <div class="nav-buttons">
       <a class="button login">Login</a>
       <a class="button reg">Register</a>
-      <a class="button prod" href="/api/products">Products</a>
+      <a class="button prod" href="/products">Products</a>
     </div>
   </nav>
 
@@ -37,6 +37,10 @@
             <label for="category">Category</label>
             <select id="category" name="category">
               <option value="">All</option>
+
+                <% categories.forEach(cat => { %>
+                  <option value="<%= cat %>"><%= cat %></option>
+                <% }); %>
 
             </select>
           </div>
