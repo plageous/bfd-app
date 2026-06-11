@@ -20,14 +20,14 @@
       <h1>All Products</h1>
       <p>Browse the Luxuper catalog.</p>
 
-      <form method="GET" action="/api/products">
-        <section class="form-section">
-          <div class="filter-group">
+       <form class="search-form" method="GET" action="/api/products">
+        <section class="form-card">
+          <div class="form-group">
             <label for="search">Search</label>
             <input type="text" id="search" name="search" placeholder="Search name or description..." value="<%= query?.search || '' %>" />
           </div>
 
-          <div class="filter-group">
+          <div class="form-group">
             <label for="category">Category</label>
             <select id="category" name="category">
               <option value="">All</option>
@@ -39,7 +39,7 @@
             </select>
           </div>
 
-          <div class="filter-group">
+          <div class="form-group">
             <label for="sort">Sort</label>
             <select id="sort" name="sort">
               <option value="featured">Featured</option>
@@ -57,7 +57,9 @@
         Clear
         </button>
 
+      </section>
       </form>
+
 
 
 
@@ -116,7 +118,7 @@
       <% }); %>
 
   </main>
-  <%- include('/templates/footer') %>
+  <%- include('templates/footer') %>
 
 </body>
 
