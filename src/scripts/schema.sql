@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS products;
+USE luxuper_db;
 
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,

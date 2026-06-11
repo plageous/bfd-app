@@ -183,9 +183,8 @@ INSERT INTO products (productName, productDesc, productType, producePrice, image
 'Webcam',
 179.99,
 'images/'
-)
+);
 
-<-- Creating users table with placeholder accounts -->
 INSERT INTO users (username, password)
 VALUES
 ('alex', 'password123'),
