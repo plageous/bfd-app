@@ -1,5 +1,6 @@
 import express from 'express';
 import router from './routers/router.js';
+import session from "express-session";
 
 //configure Express.js app
 const app = express();
