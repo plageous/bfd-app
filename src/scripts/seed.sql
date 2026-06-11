@@ -184,3 +184,9 @@ INSERT INTO products (productName, productDesc, productType, producePrice, image
 179.99,
 'images/'
 )
+
+<-- Creating users table with placeholder accounts -->
+INSERT INTO users (username, password, role)
+VALUES
+('alex', 'password123', 'user'),
+('morgan', 'adminpass', 'admin');
