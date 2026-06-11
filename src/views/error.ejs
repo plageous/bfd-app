@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-
-    <nav class="nav-bar">
-        <div class="nav-buttons">
-            <a class="button login">Login</a>
-            <a class="button reg">Register</a>
-            <a class="button prod" href="/products">Products</a>
-        </div>
-    </nav>
+  <%- include('templates/navbar') %>
 
     <main class="container">
         <section class="card">
@@ -26,9 +19,7 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p>BFD Web Development - (2026)</p>
-    </footer>
+    <%- include('templates/footer') %>
 
 </body>
 </html>
