@@ -26,8 +26,8 @@
       <h1>All Products</h1>
       <p>Browse the Luxuper catalog.</p>
 
-      <form class="filter-form" method="GET" action="/api/products">
-        <section class="filter-form">
+      <form method="GET" action="/api/products">
+        <section class="form-section">
           <div class="filter-group">
             <label for="search">Search</label>
             <input type="text" id="search" name="search" placeholder="Search name or description..." value="<%= query?.search || '' %>" />
