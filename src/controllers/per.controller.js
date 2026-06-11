@@ -113,3 +113,16 @@ console.error(err);
 return res.redirect("/register?errors=Registration failed");
 }
 };
+
+export const isLoggedIn = (req,res,next) => {
+    if(!req.user) {
+        return res.redirect("/login?errors=Please log in first.");
+    }
+    next();
+}
+
+export const logout = (req,res) => {
+    req.session.destroy(() => {
+        return res.redirect("/login");
+    });
+}
