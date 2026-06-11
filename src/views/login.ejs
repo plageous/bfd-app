@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <%- include('templates/navbar') %>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1><%= title %></h1>
+      <p><%= subtitle %></p>
+    </div>
+
+    <div class="hero-image">
+        <main class="container">
+        <section class="form-card">
+    <form method="POST" action="/login">
+
+      <div class="filter-group">
+        <label for="username">Email</label>
+        <input type="text" id="password" name="password">
+                <label for="password">Password</label>
+        <input type="text" id="password" name="password">
+
+                  <button class="button secondary" type="submit">
+            Login
+          </button>
+        
+      </div>
+      </form>
+    </section>
+  </main>
+    </div>
+  </header>
+
+
+  <%- include('templates/footer') %>
+
+</body>
+
+</html>
