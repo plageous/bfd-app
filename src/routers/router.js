@@ -6,8 +6,13 @@ const router = Router();
 
 // primary endpoints
 router.get("/", perCtl.homepage);
+
 router.get("/login", perCtl.loginPage);
+router.post("/login", perCtl.login);
+
 router.get("/register", perCtl.registerPage);
+router.post("/register", perCtl.register);
+
 router.get("/products", perCtl.getProducts);
 router.get("/products/:id", perCtl.getById);
 
