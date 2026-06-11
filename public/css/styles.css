@@ -162,7 +162,7 @@ form {
         0 0 0 1px var(--border);
 }
 /* Container */
-.filter-form {
+.form-section {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
@@ -198,7 +198,7 @@ min-width: 180px;
 }
 
 /* Buttons */
-.filter-form .button {
+.form-section .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +216,7 @@ background: var(--bg)
 
 /* Responsive */
 @media (max-width: 700px) {
-.filter-form {
+.form-section {
 flex-direction: column;
 align-items: stretch;
 }
@@ -226,7 +226,7 @@ align-items: stretch;
 width: 100%;
 }
 
-.filter-form .button {
+.form-section .button {
 max-width: 120px;
 text-align: center;
 }
