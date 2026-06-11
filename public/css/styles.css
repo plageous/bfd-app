@@ -12,12 +12,20 @@
 box-sizing: border-box;
 }
 
-body {
-margin: 0;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-background: linear-gradient(180deg, #020617, #020617 280px, #0f172a);
-color: var(--text);
+html {
+  min-height: 100%;
 }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #020617, #020617 280px, #0f172a);
+  color: var(--text);
+}
+
 /* Nav Bar */
 .nav-bar{
 display: flex;
@@ -146,51 +154,61 @@ border: 1px solid var(--accent);
 
 /* ===== Footer ===== */
 
-.footer {
-text-align: center;
-padding: 2.5rem 1rem;
-color: var(--muted);
-font-size: 0.9rem;
+footer.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* ===== Filter Bar ===== */
-form {
+/* ===== Form ===== */
+.search-form {
     background: var(--card);
     border-radius: 14px;
     box-shadow:
         0 20px 40px rgba(69, 48, 255, 0.116),
         0 0 0 1px var(--border);
 }
+
+.account-form {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow:
+        0 20px 40px rgba(69, 48, 255, 0.116),
+        0 0 0 1px var(--border);
+    padding: 40px;    
+}
 /* Container */
-.form-section {
+.form-card{
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
-  padding: .75rem 0;
+  gap: 1.25rem;
+  padding: .75rem .5rem;
   flex-wrap: wrap;
   margin: 0 auto 1.5rem auto; /* centers the whole form */
   justify-content: center;    /* centers items inside */
-  max-width: 1200;           /* optional: keeps it from stretching too wide */
+  max-width: 1200px;           /* keeps it from stretching too wide */
 }
 
 /* Each filter group */
-.filter-group {
+.form-group {
 display: flex;
 flex-direction: column;
 gap: 0.35rem;
 }
 
 /* Labels */
-.filter-group label {
+.form-group label {
 font-size: 0.85rem;
 font-weight: 600;
 color: #99aee938;
 }
 
 /* Inputs + selects */
-.filter-group input,
-.filter-group select {
-padding: 0.75rem 0.75rem;
+.form-group input,
+.form-group select {
+padding: .75rem 3rem;
 border: 1px solid #ccc;
 border-radius: 6px;
 font-size: 0.9rem;
@@ -198,7 +216,7 @@ min-width: 180px;
 }
 
 /* Buttons */
-.form-section .button {
+.form-card .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -216,17 +234,17 @@ background: var(--bg)
 
 /* Responsive */
 @media (max-width: 700px) {
-.form-section {
+.form-card {
 flex-direction: column;
 align-items: stretch;
 }
 
-.filter-group input,
-.filter-group select {
+.form-group input,
+.form-group select {
 width: 100%;
 }
 
-.form-section .button {
+.form-card .button {
 max-width: 120px;
 text-align: center;
 }
