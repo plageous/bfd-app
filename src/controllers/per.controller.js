@@ -53,3 +53,14 @@ export const homepage = (req, res) =>
         title: "Luxuper",
         subtitle: "Premium Computer Peripherals"
     });
+export const loginPage = (req, res) => 
+    res.status(200).render("login", {
+        title: "Welcome back",
+        subtitle: "Login to browse our catalog."
+    });
+
+export const registerPage = (req, res) => 
+res.status(200).render("register", {
+    title: "Create an account",
+    subtitle: "Register to begin viewing our full catalog."
+});
