@@ -1,4 +1,4 @@
-import { getAllProducts, getProductById } from '../services/service.js';
+import { getAllProducts, getProductById, createUser } from '../services/service.js';
 
 export const status = (req, res) => {
     res.status(200).json({
@@ -56,11 +56,33 @@ export const homepage = (req, res) =>
 export const loginPage = (req, res) => 
     res.status(200).render("login", {
         title: "Welcome back",
-        subtitle: "Login to browse our catalog."
+        subtitle: "Login to browse our catalog.",
+        errors: req.query.errors || null
     });
 
 export const registerPage = (req, res) => 
 res.status(200).render("register", {
     title: "Create an account",
-    subtitle: "Register to begin viewing our full catalog."
+    subtitle: "Register to begin viewing our full catalog.",
+    errors: req.query.errors || null
 });
+
+export const register = async (req, res) => {
+    const { username, password, confirm, role } = req.body;
+
+    if (!username || !password || !confirm) {
+        return res.redirect("/register?errors=All fields required");
+    }
+
+    if (password !== confirm) {
+        return res.redirect("/register?errors=Passwords do not match");
+    }
+
+    try {
+        await createUser(username, password, role);
+        return res.redirect("/login");
+    } catch (err) {
+        console.error(err);
+        return res.redirect("/register?errors=Registration failed");
+    }
+};
