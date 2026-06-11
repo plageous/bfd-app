@@ -21,13 +21,23 @@
     <div class="hero-image">
         <main class="container">
         <section class="form-card">
-    <form class="account-form" method="POST" action="/login">
+    <form class="account-form" method="POST" action="/register">
 
       <div class="form-group">
-        <label for="username">Email</label>
+
+                    <% if (errors) { %>
+            <p class="error"><%= errors %></p>
+        <% } %>
+
+        
+        <label for="username">Username</label>
         <input type="text" id="password" name="password">
-                <label for="password">Password</label>
-        <input type="text" id="password" name="password">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" name="password">
+
+
 
                   <button class="button secondary" type="submit">
             Login
