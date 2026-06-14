@@ -27,7 +27,7 @@ body {
 }
 
 /* Nav Bar */
-.nav-bar{
+.nav-bar, .nav-user{
 display: flex;
 background-color: var(--card);
 align-items: center;

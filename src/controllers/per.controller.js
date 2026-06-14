@@ -123,6 +123,13 @@ export const isLoggedIn = (req,res,next) => {
 
 export const logout = (req,res) => {
     req.session.destroy(() => {
-        return res.redirect("/login");
+        return res.redirect("/");
     });
 }
+
+export const requireAuth = (req, res, next) => {
+    if (!req.user) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+    next();
+};

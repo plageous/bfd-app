@@ -22,6 +22,12 @@ app.use((req, res, next) => {
     }
     next();
 });
+
+app.use((req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
+
 //view engine
 app.set("view engine", "ejs");
 app.set("views", "src/views");

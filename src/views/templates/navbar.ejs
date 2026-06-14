@@ -1,9 +1,16 @@
+<nav class="nav-bar">
+    <div class="nav-buttons">
+        <a class="button prod" href="/">Home</a>
+        <a class="button prod" href="/products">Products</a>
 
-    <nav class="nav-bar">
-        <div class="nav-buttons">
-            <a class="button prod" href="/">Home</a>
+        <% if (locals.user) { %>
+            <form method="POST" action="/logout" style="display:inline">
+                <button class="button prod" type="submit">Logout</button>
+            </form>
+            <span class="nav-user">Hi, <%= user.username %></span>
+        <% } else { %>
             <a class="button login" href="/login">Login</a>
             <a class="button reg" href="/register">Register</a>
-            <a class="button prod" href="/products">Products</a>
-        </div>
-    </nav>
+        <% } %>
+    </div>
+</nav>
