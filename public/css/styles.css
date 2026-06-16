@@ -253,3 +253,28 @@ max-width: 120px;
 text-align: center;
 }
 }
+
+/* ===== Product Card ===== */
+.cart-panel-wrapper {
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-name { flex: 1; }
+.cart-total { margin-top: 0.75rem; }
+.cart-empty { opacity: 0.6; }
+.button.small { padding: 0.2rem 0.6rem; font-size: 0.8rem; }

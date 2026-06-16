@@ -54,6 +54,16 @@
                 </a>
             </div>
 
+            <button
+                class="button secondary"
+                data-id="<%= product.id %>"
+                data-name="<%= product.productName %>"
+                data-price="<%= product.producePrice %>"
+                data-image="<%= product.image_url %>"
+                onclick="addToCart(this)">
+                Add to Cart
+            </button>
+
         </section>
 
     </main>
