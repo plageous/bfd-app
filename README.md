@@ -74,7 +74,7 @@ npm install
 
 ### 3. Configure environment
 
-Create a `.env` file in the root based and fill in your values.
+Create a `.env` file in the root base and fill in your values. **Do not commit your new .env values to version control.**
 
 ### 4. Start the database
 
@@ -85,7 +85,7 @@ docker-compose up -d
 
 ### 5. Initialize the database
 
-Connect to MySQL and run the following scripts in order:
+Connect your MySQL database and run the following scripts in order:
 
 ```
 src/scripts/schema.sql
@@ -99,20 +99,35 @@ npm run dev
 ```
 
 ---
+## Authentication Flow
+
+### 1. Create an account
+Create an account by clicking "Register" in the nav bar.
+
+### 2. Log in
+Navigate to the login page via the navbar or redirects on the registration page.
+
+### 3. Log out when finished
+
+---
 
 ## SSR Routes
+**PUBLIC**
 
 | Method | Route | Description |
 |--------|-------|-------------|
 | GET | `/` | Landing / home page |
 | GET | `/products` | Full product catalog (server-side rendered) |
 | GET | `/products/:id` | Individual product detail page |
+| GET | `/login` | Login page |
+| GET | `/register` | Registration page |
 
 The `/products` page is server-side rendered on initial load — all product data is fetched from the database and injected into the EJS template before the page is sent to the client.
 
 ---
 
-## REST API
+## PRODUCTS API
+**PROTECTED**
 
 Base URL: `/api`
 
@@ -156,6 +171,17 @@ GET /api/products?category=Mice&maxPrice=50&sort=price
 }
 ```
 
+### CART
+**PROTECTED**
+
+Base URL: `/api/cart`
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/cart/items` | Adds item to cart |
+| DELETE | `/api/cart/items/:productId` | Deletes item in cart by specified ID |
+| POST | `/api/products/clear` | Clears all items in cart  |
+
 ---
 
 ## How Filtering Works
@@ -168,6 +194,13 @@ Luxuper uses a hybrid SSR + REST architecture:
 
 This gives the best of both worlds: fast initial load with SSR, and responsive filtering without page refreshes.
 
+---
+## Session-based Cart
+
+Cart data and contents are stored in a server-side session state:
+```
+req.session.cart
+```
 ---
 
 ## Product Categories
